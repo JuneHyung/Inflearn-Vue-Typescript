@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
-    <spinner :loading="loading"></spinner>
-    <tool-bar></tool-bar>
-    <transition name="routing-fade" mode="out-in">
-      <router-view></router-view>
-    </transition>
-  </div>
+    <div id="app">
+        <spinner :loading="loading"></spinner>
+        <tool-bar></tool-bar>
+        <transition name="routing-fade" mode="out-in">
+            <router-view></router-view>
+        </transition>
+    </div>
 </template>
 
 <script>
