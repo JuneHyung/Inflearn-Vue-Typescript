@@ -20,13 +20,14 @@ export default new VueRouter({
       component: createListView('NewsView'),
       async beforeEnter(routeTo:Route, routeFrom: Route, next: NavigationGuardNext<Vue>) {
         bus.$emit('on:progress');
-        try {
-          await store.dispatch('FETCH_LIST', routeTo.name);
-          next();
-        } catch (error) { 
-          new Error('failed to fetch news items');
-          next('/error');
-        }
+        // try {
+        //   await store.dispatch('FETCH_LIST', routeTo.name);
+        //   next();
+        // } catch (error) { 
+        //   new Error('failed to fetch news items');
+        //   next('/error');
+        // }
+        next();
       },
     },
     {

@@ -16,16 +16,15 @@ module.exports = {
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'prettier/prettier': [
-      'warn',
+      'error',
       {
         singleQuote: true,
         semi: false,
-        trailingComma: 'none'
-      },
-      'error',
-      {
-          endOfLine: 'auto',
+        trailingComma: 'none',
+        endOfLine:'auto'
       },
   ],
   },
