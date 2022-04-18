@@ -3,7 +3,7 @@ import VueRouter, { NavigationGuardNext, Route } from 'vue-router';
 import { ItemView, UserView } from '../views';
 import createListView from '../views/CreateListView';
 import bus from '../utils/bus';
-import store from '../store/index.js';
+import store from '../store/index';
 
 Vue.use(VueRouter);
 
@@ -12,45 +12,59 @@ export default new VueRouter({
   routes: [
     {
       path: '/',
-      redirect: '/news' 
+      redirect: '/news'
     },
     {
       path: '/news',
       name: 'news',
       component: createListView('NewsView'),
-      async beforeEnter(routeTo:Route, routeFrom: Route, next: NavigationGuardNext<Vue>) {
+      async beforeEnter(
+        routeTo: Route,
+        routeFrom: Route,
+        next: NavigationGuardNext<Vue>
+      ) {
         bus.$emit('on:progress');
         // try {
         //   await store.dispatch('FETCH_LIST', routeTo.name);
         //   next();
-        // } catch (error) { 
+        // } catch (error) {
         //   new Error('failed to fetch news items');
         //   next('/error');
         // }
         next();
-      },
+      }
     },
     {
       path: '/ask',
       name: 'ask',
       component: createListView('AskView'),
-      beforeEnter(routeTo: Route, routeFrom:Route, next:NavigationGuardNext<Vue>) {
+      beforeEnter(
+        routeTo: Route,
+        routeFrom: Route,
+        next: NavigationGuardNext<Vue>
+      ) {
         bus.$emit('on:progress');
-        store.dispatch('FETCH_LIST', routeTo.name)
+        store
+          .dispatch('FETCH_LIST', routeTo.name)
           .then(() => next())
-          .catch((() => new Error('failed to fetch news items')));
-      },
+          .catch(() => new Error('failed to fetch news items'));
+      }
     },
     {
       path: '/jobs',
       name: 'jobs',
       component: createListView('JobsView'),
-      beforeEnter(routeTo: Route, routeFrom:Route, next:NavigationGuardNext<Vue>) {
+      beforeEnter(
+        routeTo: Route,
+        routeFrom: Route,
+        next: NavigationGuardNext<Vue>
+      ) {
         bus.$emit('on:progress');
-        store.dispatch('FETCH_LIST', routeTo.name)
+        store
+          .dispatch('FETCH_LIST', routeTo.name)
           .then(() => next())
-          .catch((() => new Error('failed to fetch news items')));
-      },
+          .catch(() => new Error('failed to fetch news items'));
+      }
     },
     {
       path: '/item/:id',
@@ -58,10 +72,11 @@ export default new VueRouter({
       beforeEnter(routeTo, routeFrom, next) {
         bus.$emit('on:progress');
         const itemId = routeTo.params.id;
-        store.dispatch('FETCH_ITEM', itemId)
+        store
+          .dispatch('FETCH_ITEM', itemId)
           .then(() => next())
-          .catch(err => new Error('failed to fetch item details'));
-      },
+          .catch((err) => new Error('failed to fetch item details'));
+      }
     },
     {
       path: '/user/:id',
@@ -69,10 +84,11 @@ export default new VueRouter({
       beforeEnter(routeTo, routeFrom, next) {
         bus.$emit('on:progress');
         const itemId = routeTo.params.id;
-        store.dispatch('FETCH_USER', itemId)
+        store
+          .dispatch('FETCH_USER', itemId)
           .then(() => next())
-          .catch(err => new Error('failed to fetch user profile'));
-      },
+          .catch((err) => new Error('failed to fetch user profile'));
+      }
     }
   ]
-})
+});

@@ -1,11 +1,8 @@
 <template>
   <div class="lds-facebook" v-if="loading">
-    <div>
-    </div>
-    <div>
-    </div>
-    <div>
-    </div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 </template>
 
@@ -14,10 +11,10 @@ export default {
   props: {
     loading: {
       type: Boolean,
-      required: true,
-    },
-  },
-}
+      required: true
+    }
+  }
+};
 </script>
 
 <style>
@@ -54,7 +51,8 @@ export default {
     top: 6px;
     height: 51px;
   }
-  50%, 100% {
+  50%,
+  100% {
     top: 19px;
     height: 26px;
   }

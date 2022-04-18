@@ -12,10 +12,10 @@
 export default {
   props: {
     loading: {
-      type: Boolean,
-    },
+      type: Boolean
+    }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -28,7 +28,7 @@ export default {
   margin-bottom: -2px;
   height: 2px;
   background-color: #3eaf7c;
-  animation: start .3s ease-in;
+  animation: start 0.3s ease-in;
   position: relative;
 }
 
@@ -48,7 +48,7 @@ export default {
   height: 2px;
   background-color: white;
   position: absolute;
-  transition: transform .2s linear;
+  transition: transform 0.2s linear;
 }
 
 .bar1 {
@@ -62,18 +62,18 @@ export default {
 @keyframes growBar1 {
   0% {
     animation-timing-function: linear;
-    transform: scaleX(.1);
+    transform: scaleX(0.1);
   }
   36.6% {
-    animation-timing-function: cubic-bezier(.33473,.12482,.78584,1);
-    transform: scaleX(.1);
+    animation-timing-function: cubic-bezier(0.33473, 0.12482, 0.78584, 1);
+    transform: scaleX(0.1);
   }
   69.15% {
-    animation-timing-function: cubic-bezier(.22573,0,.23365,1.37098);
-    transform: scaleX(.83);
+    animation-timing-function: cubic-bezier(0.22573, 0, 0.23365, 1.37098);
+    transform: scaleX(0.83);
   }
   100% {
-    transform: scaleX(.1);
+    transform: scaleX(0.1);
   }
 }
 
@@ -84,11 +84,11 @@ export default {
   }
   20% {
     left: -105.16667%;
-    animation-timing-function: cubic-bezier(.5,0,.70173,.49582);
+    animation-timing-function: cubic-bezier(0.5, 0, 0.70173, 0.49582);
   }
   69.15% {
     left: 21.5%;
-    animation-timing-function: cubic-bezier(.30244,.38135,.55,.95635);
+    animation-timing-function: cubic-bezier(0.30244, 0.38135, 0.55, 0.95635);
   }
   100% {
     left: 95.44444%;
@@ -97,35 +97,40 @@ export default {
 
 @keyframes growBar2 {
   0% {
-    animation-timing-function: cubic-bezier(.20503,.05705,.57661,.45397);
-    transform: scaleX(.1);
+    animation-timing-function: cubic-bezier(0.20503, 0.05705, 0.57661, 0.45397);
+    transform: scaleX(0.1);
   }
   19.15% {
-    animation-timing-function: cubic-bezier(.15231,.19643,.64837,1.00432);
-    transform: scaleX(.57);
+    animation-timing-function: cubic-bezier(0.15231, 0.19643, 0.64837, 1.00432);
+    transform: scaleX(0.57);
   }
   44.15% {
-    animation-timing-function: cubic-bezier(.25776,-.00316,.21176,1.38179);
-    transform: scaleX(.91);
+    animation-timing-function: cubic-bezier(
+      0.25776,
+      -0.00316,
+      0.21176,
+      1.38179
+    );
+    transform: scaleX(0.91);
   }
   100% {
-    transform: scaleX(.1);
+    transform: scaleX(0.1);
   }
 }
-       
+
 @keyframes moveBar2 {
   0% {
     left: -54.88889%;
-    animation-timing-function: cubic-bezier(.15,0,.51506,.40968);
-  }     
+    animation-timing-function: cubic-bezier(0.15, 0, 0.51506, 0.40968);
+  }
   25% {
     left: -17.25%;
-    animation-timing-function: cubic-bezier(.31033,.28406,.8,.73372);
-  }     
+    animation-timing-function: cubic-bezier(0.31033, 0.28406, 0.8, 0.73372);
+  }
   48.35% {
     left: 29.5%;
-    animation-timing-function: cubic-bezier(.4,.62703,.6,.90203);
-  } 
+    animation-timing-function: cubic-bezier(0.4, 0.62703, 0.6, 0.90203);
+  }
   100% {
     left: 117.38889%;
   }
