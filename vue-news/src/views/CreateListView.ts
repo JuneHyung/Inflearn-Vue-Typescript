@@ -10,6 +10,6 @@ export default function createListView(name: string) {
     },
     render(h: CreateElement) {
       return h(ListView);
-    },
+    }
   };
 }
