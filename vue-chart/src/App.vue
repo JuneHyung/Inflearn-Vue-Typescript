@@ -4,7 +4,7 @@
   </div>
 </template>
 <script lang="ts">
-import Chart from "chart.js/auto";
+// import Chart from "chart.js/auto";
 import Vue from "vue";
 
 export default Vue.extend({
@@ -18,7 +18,7 @@ export default Vue.extend({
       return;
     }
 
-    const myChart = new Chart(ctx, {
+    const myChart = new this.$_Chart(10, {
       type: "line",
       data: {
         labels: ["January", "February", "March", "April", "May", "June"],
