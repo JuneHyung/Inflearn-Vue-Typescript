@@ -11,3 +11,6 @@ declare module "vue/types/vue" {
     $_Chart: Chart;
   }
 }
+
+// @types 라이브러리가 제공되지 않는 라이브러리의 경우
+// declare module "라이브러리 이름";
