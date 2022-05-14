@@ -1,6 +1,6 @@
 <template>
   <div>
-    <canvas id="myChart"></canvas>
+    <canvas id="myChart" ref="myChart"></canvas>
   </div>
 </template>
 <script lang="ts">
@@ -9,10 +9,10 @@ import Vue from "vue";
 
 export default Vue.extend({
   mounted() {
-    const canvasElement = document.getElementById(
-      "myChart"
-    ) as HTMLCanvasElement;
-
+    // const canvasElement = document.getElementById(
+    //   "myChart"
+    // ) as HTMLCanvasElement;
+    const canvasElement = this.$refs.myChart;
     const ctx = canvasElement.getContext("2d");
     if (ctx === null) {
       return;
