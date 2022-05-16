@@ -6,10 +6,11 @@
 <script lang="ts">
 // import Chart from "chart.js/auto";
 import Vue, { VueConstructor } from "vue";
-
-export default (
-  Vue as VueConstructor<Vue & { $refs: { myChart: HTMLCanvasElement } }>
-).extend({
+import { MyVueRefs } from "./types/index";
+// export default (
+//   Vue as VueConstructor<Vue & { $refs: { myChart: HTMLCanvasElement } }>
+// ).extend({
+export default (Vue as MyVueRefs<{ myChart: HTMLCanvasElement }>).extend({
   mounted() {
     // this.$refs.my
     const canvasElement = this.$refs.myChart;
