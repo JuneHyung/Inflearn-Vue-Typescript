@@ -7,6 +7,7 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
+import {VueEvent} from "@/types/index"
 export default Vue.extend({
   // props: ["item"],
   props: {
@@ -16,7 +17,11 @@ export default Vue.extend({
     },
   },
   methods: {
-    handleInput(event: InputEvent) {
+    handleInput(event: VueEvent.Input<HTMLInputElement>) {
+      event.target.value;
+      // const a: VueEvent.Input = {
+      //   target
+      // }
       // console.log(event);
       // if (!event.target) {
       //   return;
