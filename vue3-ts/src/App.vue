@@ -8,6 +8,12 @@ import { defineComponent } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
 
 export default defineComponent({
+  // setup(){
+  //   const str = ref("");
+  //   str.value = "hi";
+  //   return {str}
+  // }
+
   name: "App",
   components: {
     HelloWorld,
